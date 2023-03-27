@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.pw3.desafio1.MainFragment"
+        android:label="@string/my_trips"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_to_myTripDetail"
+            app:destination="@id/myTripDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/myTripDetail"
+        android:name="com.pw3.desafio1.MyTripDetailFragment"
+        android:label="@string/my_trip_detail"
+        tools:layout="@layout/fragment_my_trip_detail" />
+
+</navigation>
