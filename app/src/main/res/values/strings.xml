@@ -13,6 +13,7 @@
     <string name="local">Local</string>
     <string name="dias">Dias</string>
     <string name="share">Compartilhar</string>
+    <string name="month">Mês</string>
 
     <string-array name="meses_ano">
         <item>Janeiro</item>
