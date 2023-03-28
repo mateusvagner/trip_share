@@ -1,14 +1,14 @@
 package com.pw3.desafio1
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.pw3.desafio1.databinding.FragmentMyTripDetailBinding
-import com.pw3.desafio1.domain.TripDetail
 import java.lang.Integer.parseInt
+
 
 class MyTripDetailFragment : Fragment() {
 
@@ -30,11 +30,15 @@ class MyTripDetailFragment : Fragment() {
             val days = parseInt(binding.diasEditText.text.toString())
             val month = binding.mesSpinner.selectedItem.toString()
 
-            val myTrip = TripDetail(
-                local,
-                days,
-                month
-            )
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "*/*"
+            intent.putExtra(Intent.EXTRA_EMAIL, "teste@gmail.com")
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Minha viagem")
+            intent.putExtra(Intent.EXTRA_TEXT, "Viagem para $local, durante $days no mês de $month")
+            if (intent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(intent)
+            }
         }
     }
 }
